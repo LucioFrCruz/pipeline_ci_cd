@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #0366d6;
+        }
+
+        button {
+            background-color: #0366d6;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #mensagem {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Olá, GitHub!</h1>
+
+        <p>
+            Este site foi publicado a partir do diretório
+            <strong>site/</strong>.
+        </p>
+
+        <button onclick="mostrarMensagem()">
+            Clique aqui
+        </button>
+
+        <p id="mensagem"></p>
+    </div>
+
+    <script>
+        function mostrarMensagem() {
+            document.getElementById("mensagem").innerText =
+                "JavaScript funcionando com sucesso!";
+        }
+    </script>
+
+</body>
+</html>

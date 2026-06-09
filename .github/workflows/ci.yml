@@ -1,1 +1,37 @@
+name: CI
 
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/**
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  validate-site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Verificar se index.html existe
+        run: |
+          test -f site/index.html
+
+      - name: Exibir conteúdo do site
+        run: |
+          echo "Arquivos encontrados:"
+          ls -R site
+
+      - name: Validar HTML básico
+        run: |
+          grep -q "<html" site/index.html
+          grep -q "</html>" site/index.html
+
+      - name: CI concluída
+        run: echo "Validação executada com sucesso!"
